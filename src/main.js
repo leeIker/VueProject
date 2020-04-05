@@ -9,6 +9,10 @@ import axios from 'axios'
 
 Vue.prototype.$http = axios
 axios.defaults.baseURL = 'http://39.98.140.77/'
+axios.interceptors.request.use(config => {
+    config.headers.Authorization = window.sessionStorage.getItem('userToken')
+    return config
+})
 
 new Vue({
     router,
