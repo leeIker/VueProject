@@ -33,7 +33,7 @@
                 <el-table-column label="操作">
                   <template slot-scope="scope">
                     <el-button type="primary" icon="el-icon-edit" @click="showChangeDialog(scope.row.id)"></el-button>
-                    <el-button type="danger" icon="el-icon-delete"></el-button>
+                    <el-button type="danger" icon="el-icon-delete" @click="deleteUser(scope.row.id)"></el-button>
                     <el-tooltip class="item" effect="dark" content="sister" placement="top" :enterable="false">
                       <el-button type="warning" icon="el-icon-setting"></el-button>
                     </el-tooltip>
@@ -173,6 +173,26 @@ export default {
         this.$refs.changeFormRef.resetFields()
         this.changeDialogStatu = false
         this.queryUser()
+      })
+    },
+    deleteUser (id) {
+      this.$confirm('此操作将永久删除该用户, 是否继续?', '提示', {
+        confirmButtonText: '确定',
+        cancelButtonText: '取消',
+        type: 'warning'
+      }).then(async () => {
+        const result = await this.$http.post('user/deleteUserById/' + id)
+        if (result.status !== 200) return this.$message.error('删除失败')
+        this.$message({
+          type: 'success',
+          message: '删除成功!'
+        })
+        this.queryUser()
+      }).catch(() => {
+        this.$message({
+          type: 'info',
+          message: '已取消删除'
+        })
       })
     }
   }
