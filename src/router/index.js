@@ -9,6 +9,12 @@ import login from '../views/login.vue'
 import home from '../components/home.vue'
 import welcome from '../components/welcome.vue'
 import users from '../components/users.vue'
+import test from '../components/test.vue'
+import blogList from '../components/blog.vue'
+import blog from '../components/blogTwo.vue'
+import tree from '../components/tree.vue'
+import rolePrivilege from '../components/rolePrivilege.vue'
+import goods from '../components/goods/goodType.vue'
 Vue.use(VueRouter)
 
 const routes = [{
@@ -21,9 +27,21 @@ const routes = [{
         redirect: '/welcome',
         children: [
             { path: '/welcome', component: welcome },
-            { path: '/1-4-1', component: users }
+            { path: '/1-4-1', component: users },
+            { path: '/rolePrivilege', component: rolePrivilege },
+            { path: '/goodtype', component: goods }
         ]
 
+    },
+    {
+        path: '/test',
+        redirect: '/blogList',
+        component: test,
+        children: [
+            { path: '/blogList', component: blogList },
+            { path: '/blog', component: blog },
+            { path: '/tree', component: tree }
+        ]
     }
 ]
 

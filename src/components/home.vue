@@ -1,7 +1,7 @@
 /* eslint-disable vue/no-duplicate-attributes */
 <template>
   <el-container class="home-container">
-  <el-header >
+  <el-header>
       <div>
           <img src="../assets/daivd.png" alt="">
           <span>李鹤的后台管理系统</span>
@@ -32,10 +32,10 @@
                     <span>用户列表</span>
                   </template>
               </el-menu-item>
-              <el-menu-item index="1-4-2">
+              <el-menu-item index="test">
                   <template slot="title">
                     <i class="el-icon-menu"></i>
-                    <span>用户权限</span>
+                    <span>另一个页面</span>
                   </template>
               </el-menu-item>
           </el-submenu>
@@ -45,16 +45,36 @@
               <i class="el-icon-location"></i>
               <span>权限管理</span>
             </template>
-              <el-menu-item index="1-5-1">
+              <el-menu-item index="rolePrivilege">
                   <template slot="title">
                     <i class="el-icon-menu"></i>
-                    <span>商品权限</span>
+                    <span>role权限</span>
                   </template>
               </el-menu-item>
               <el-menu-item index="1-5-2">
                   <template slot="title">
                     <i class="el-icon-menu"></i>
                     <span>用户权限</span>
+                  </template>
+              </el-menu-item>
+          </el-submenu>
+          <!-- 商品管理的内容-->
+          <el-submenu index="3">
+            <!-- 这部分是以及标题的模板区域-->
+            <template slot="title">
+              <i class="el-icon-location"></i>
+              <span>商品管理</span>
+            </template>
+              <el-menu-item index="goodtype">
+                  <template slot="title">
+                    <i class="el-icon-menu"></i>
+                    <span>商品分类</span>
+                  </template>
+              </el-menu-item>
+              <el-menu-item index="goods">
+                  <template slot="title">
+                    <i class="el-icon-menu"></i>
+                    <span>商品列表</span>
                   </template>
               </el-menu-item>
           </el-submenu>
@@ -76,8 +96,8 @@ export default {
       navstatus: ''
     }
   },
-  create () {
-    this.queryAll()
+  created () {
+    this.queryall()
   },
   methods: {
     logout () {
@@ -112,6 +132,7 @@ export default {
         align-items: center;
         color: #fff;
         font-size: 20px;
+        height: 200px;
         >div{
             display: flex;
             align-items: center;

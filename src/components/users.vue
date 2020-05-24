@@ -21,20 +21,17 @@
                 <el-table-column type="index" ></el-table-column>
                 <el-table-column label="姓名" prop="name"></el-table-column>
                 <el-table-column label="密码" prop="password"></el-table-column>
-                <el-table-column label="创建时间" prop="createTime"></el-table-column>
-                <el-table-column label="状态">
-                  <template >
-                    <el-switch v-model="DataDto.a"  active-color="#13ce66"
-                               inactive-color="#ff4949"
-                               @change="changeStatu(DataDto.a)">
-                    </el-switch>
+                <el-table-column label="创建时间" prop="createTime">
+                  // eslint-disable-next-line vue/no-parsing-error
+                  <template slot-scope="scope">
+                    {{scope.row.createTime | dateFormat}}
                   </template>
                 </el-table-column>
                 <el-table-column label="操作">
                   <template slot-scope="scope">
                     <el-button type="primary" icon="el-icon-edit" @click="showChangeDialog(scope.row.id)"></el-button>
                     <el-button type="danger" icon="el-icon-delete" @click="deleteUser(scope.row.id)"></el-button>
-                    <el-tooltip class="item" effect="dark" content="sister" placement="top" :enterable="false">
+                    <el-tooltip class="item" effect="dark" content="something" placement="top" :enterable="false">
                       <el-button type="warning" icon="el-icon-setting"></el-button>
                     </el-tooltip>
                   </template>
@@ -90,9 +87,9 @@ export default {
     return {
       DataDto: {
         searchContent: '',
-        currentPage: 2,
+        currentPage: 1,
         pageSize: 4,
-        a: true
+        a: false
       },
       dialogVisible: false,
       addForm: {

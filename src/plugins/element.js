@@ -2,7 +2,7 @@
 /* eslint-disable eol-last */
 /* eslint-disable import/no-duplicates */
 import Vue from 'vue'
-import { Button, FormItem, Container, Header, Aside, Main } from 'element-ui'
+import { Button, FormItem, Container, Header, Aside, Main, Alert } from 'element-ui'
 import { form } from 'element-ui'
 import {
     Input,
@@ -22,7 +22,14 @@ import {
     Tooltip,
     Pagination,
     Dialog,
-    MessageBox
+    MessageBox,
+    Tree,
+    Tag,
+    Select,
+    Option,
+    Divider,
+    Cascader,
+    Icon
 } from 'element-ui'
 
 Vue.use(Button)
@@ -48,5 +55,13 @@ Vue.use(Switch)
 Vue.use(Tooltip)
 Vue.use(Pagination)
 Vue.use(Dialog)
+Vue.use(Tree)
+Vue.use(Tag)
+Vue.use(Select)
+Vue.use(Option)
+Vue.use(Divider)
+Vue.use(Cascader)
+Vue.use(Alert)
+Vue.use(Icon)
 Vue.prototype.$message = Message
 Vue.prototype.$confirm = MessageBox.confirm
