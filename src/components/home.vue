@@ -32,10 +32,10 @@
                     <span>用户列表</span>
                   </template>
               </el-menu-item>
-              <el-menu-item index="test">
+              <el-menu-item index="TESTPAGE">
                   <template slot="title">
                     <i class="el-icon-menu"></i>
-                    <span>另一个页面</span>
+                    <span>TEST</span>
                   </template>
               </el-menu-item>
           </el-submenu>

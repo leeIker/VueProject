@@ -14,7 +14,9 @@ import blogList from '../components/blog.vue'
 import blog from '../components/blogTwo.vue'
 import tree from '../components/tree.vue'
 import rolePrivilege from '../components/rolePrivilege.vue'
-import goods from '../components/goods/goodType.vue'
+import goodstype from '../components/goods/goodType.vue'
+import goods from '../components/goods/goods.vue'
+import practice from '../components/practice.vue'
 Vue.use(VueRouter)
 
 const routes = [{
@@ -29,7 +31,9 @@ const routes = [{
             { path: '/welcome', component: welcome },
             { path: '/1-4-1', component: users },
             { path: '/rolePrivilege', component: rolePrivilege },
-            { path: '/goodtype', component: goods }
+            { path: '/goodtype', component: goodstype },
+            { path: '/goods', component: goods },
+            { path: '/TESTPAGE', component: practice }
         ]
 
     },

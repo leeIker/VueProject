@@ -133,9 +133,7 @@ export default {
       if (result.status !== 200) return this.$message.error('请求用户列表失败')
     },
     async pageChange (newPage) {
-      console.log(newPage)
       this.DataDto.currentPage = newPage
-      console.log(this.DataDto)
       this.queryUser()
     },
     changeStatu (a) {
@@ -164,7 +162,6 @@ export default {
       this.$refs.changeFormRef.validate(async vali => {
         if (vali === false) return
         const result = await this.$http.post('user/updateUser', this.changeForm)
-        console.log(result)
         if (result.status !== 200) return this.$message.error('修改信息失败')
         this.$message.success('修改信息成功')
         this.$refs.changeFormRef.resetFields()

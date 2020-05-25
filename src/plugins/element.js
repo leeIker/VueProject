@@ -29,7 +29,16 @@ import {
     Option,
     Divider,
     Cascader,
-    Icon
+    Icon,
+    Image,
+    Tabs,
+    TabPane,
+    Radio,
+    RadioGroup,
+    Timeline,
+    TimelineItem,
+    Steps,
+    Step
 } from 'element-ui'
 
 Vue.use(Button)
@@ -63,5 +72,14 @@ Vue.use(Divider)
 Vue.use(Cascader)
 Vue.use(Alert)
 Vue.use(Icon)
+Vue.use(Image)
+Vue.use(Tabs)
+Vue.use(TabPane)
+Vue.use(Radio)
+Vue.use(RadioGroup)
+Vue.use(Timeline)
+Vue.use(TimelineItem)
+Vue.use(Step)
+Vue.use(Steps)
 Vue.prototype.$message = Message
 Vue.prototype.$confirm = MessageBox.confirm
